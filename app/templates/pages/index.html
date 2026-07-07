@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Aromas & Encantos{% endblock %}
+
+{% block content %}
+
+{% include "components/navbar.html" %}
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="hero-subtitulo">
+                    Aromas • Bem-estar • Autocuidado
+                </span>
+
+                <h1>
+                    Transformando momentos simples em experiências especiais.
+                </h1>
+
+                <p>
+                    Mais do que produtos, criamos experiências que despertam
+                    memórias, emoções e encantamento através dos aromas.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#" class="btn btn-primary btn-lg">
+                        Conhecer Coleção
+                    </a>
+
+                    <a href="#" class="btn btn-outline-secondary btn-lg ms-2">
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    src="{{ url_for('static', filename='img/brand/lavanda.png') }}"
+                    class="img-fluid hero-imagem"
+                    alt="Lavanda">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
