@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Catálogo | Aromas & Encantos{% endblock %}
+
+{% block content %}
+
+{% include "components/navbar.html" %}
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h1>Catálogo</h1>
+
+            <p>Conheça todos os produtos da Aromas & Encantos.</p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="produto-card">
+                    <h4>Velas Aromáticas</h4>
+                    <p>Minimalistas • 50g</p>
+                    <strong>R$ 32,90</strong>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="produto-card">
+                    <h4>Body Splash</h4>
+                    <p>200 ml</p>
+                    <strong>R$ 39,90</strong>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="produto-card">
+                    <h4>Sabonetes Artesanais</h4>
+                    <p>Diversos modelos</p>
+                    <strong>A partir de R$ 8,00</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
