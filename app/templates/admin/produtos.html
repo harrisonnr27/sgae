@@ -1,0 +1,214 @@
+{% extends "admin/layouts/_base.html" %}
+
+{% block title %}Produtos{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2>Produtos</h2>
+
+        <a
+            href="{{ url_for('admin.novo_produto') }}"
+            class="btn btn-primary">
+
+            + Novo Produto
+
+        </a>
+
+    </div>
+
+
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Imagem</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                        <th>Status</th>
+                        <th width="230">Ações</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                {% if produtos %}
+
+                    {% for produto in produtos %}
+
+                    <tr>
+
+                        <td width="90">
+
+                            {% if produto.imagem %}
+
+                            <img
+                                src="{{ url_for('static', filename='img/products/' ~ produto.imagem) }}"
+                                class="img-thumbnail"
+                                style="width:70px;height:70px;object-fit:cover;">
+
+                            {% else %}
+
+                            <span class="text-muted">
+                                Sem imagem
+                            </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td>
+
+                            <strong>{{ produto.nome }}</strong>
+
+                        </td>
+
+
+                        <td>
+
+                            {{ produto.categoria }}
+
+                        </td>
+
+
+                        <td>
+
+                            R$ {{ "%.2f"|format(produto.preco) }}
+
+                        </td>
+
+
+                        <td>
+
+                            {% if produto.estoque > 0 %}
+
+                                <span class="text-success fw-semibold">
+                                    {{ produto.estoque }}
+                                </span>
+
+                            {% else %}
+
+                                <span class="text-danger fw-semibold">
+                                    0
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td>
+
+                            {% if produto.ativo %}
+
+                                <span class="badge bg-success">
+                                    Ativo
+                                </span>
+
+                            {% else %}
+
+                                <span class="badge bg-secondary">
+                                    Inativo
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="d-flex gap-1 flex-wrap">
+
+                                <a
+                                    href="{{ url_for('admin.editar_produto', id=produto.id) }}"
+                                    class="btn btn-warning btn-sm">
+
+                                    Editar
+
+                                </a>
+
+
+                                {% if produto.ativo %}
+
+                                    <a
+                                        href="{{ url_for('admin.desativar_produto', id=produto.id) }}"
+                                        class="btn btn-secondary btn-sm"
+                                        onclick="return confirm('Deseja desativar este produto?')">
+
+                                        Desativar
+
+                                    </a>
+
+                                {% else %}
+
+                                    <a
+                                        href="{{ url_for('admin.ativar_produto', id=produto.id) }}"
+                                        class="btn btn-success btn-sm">
+
+                                        Ativar
+
+                                    </a>
+
+                                {% endif %}
+
+
+                                <a
+                                    href="{{ url_for('admin.excluir_produto', id=produto.id) }}"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Deseja realmente excluir este produto?')">
+
+                                    Excluir
+
+                                </a>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <tr>
+
+                        <td
+                            colspan="7"
+                            class="text-center text-muted py-5">
+
+                            Nenhum produto cadastrado.
+
+                        </td>
+
+                    </tr>
+
+                {% endif %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

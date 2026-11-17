@@ -29,12 +29,21 @@
 
                 <div class="mt-4">
 
-                    <a href="#" class="btn btn-primary btn-lg">
+                    <a
+                        href="{{ url_for('site.catalogo') }}"
+                        class="btn btn-primary btn-lg">
+
                         Conhecer Coleção
+
                     </a>
 
-                    <a href="#" class="btn btn-outline-secondary btn-lg ms-2">
+                    <a
+                        href="https://wa.me/55SEUNUMERO"
+                        target="_blank"
+                        class="btn btn-outline-secondary btn-lg ms-2">
+
                         WhatsApp
+
                     </a>
 
                 </div>
@@ -55,6 +64,8 @@
     </div>
 
 </section>
+
+
 <section class="historia">
 
     <div class="container">
@@ -63,9 +74,13 @@
 
             <div class="col-lg-8 text-center">
 
-                <span class="titulo-secao">Nossa História</span>
+                <span class="titulo-secao">
+                    Nossa História
+                </span>
 
-                <h2>Feito com carinho em cada detalhe.</h2>
+                <h2>
+                    Feito com carinho em cada detalhe.
+                </h2>
 
                 <p>
                     A Aromas & Encantos nasceu do sonho de transformar momentos
@@ -91,58 +106,163 @@
     </div>
 
 </section>
+
+
 <section class="colecoes">
 
     <div class="container">
 
         <div class="text-center mb-5">
 
-            <span class="titulo-secao">Nossas Coleções</span>
+            <span class="titulo-secao">
+                Nossas Coleções
+            </span>
 
-            <h2>Escolha a experiência que combina com você.</h2>
+            <h2>
+                Escolha a experiência que combina com você.
+            </h2>
 
         </div>
 
         <div class="row g-4">
 
             <div class="col-md-6 col-lg-4">
-                <div class="colecao-card">
-                    <div class="icone">🕯️</div>
-                    <h4>Velas Aromáticas</h4>
-                    <p>Fragrâncias que transformam ambientes em momentos de aconchego e bem-estar.</p>
-                </div>
+
+                <a
+                    href="{{ url_for('site.catalogo', categoria='Velas Aromáticas') }}"
+                    class="text-decoration-none text-dark">
+
+                    <div class="colecao-card">
+
+                        <div class="icone">
+                            🕯️
+                        </div>
+
+                        <h4>
+                            Velas Aromáticas
+                        </h4>
+
+                        <p>
+                            Fragrâncias que transformam ambientes em momentos
+                            de aconchego e bem-estar.
+                        </p>
+
+                    </div>
+
+                </a>
+
             </div>
+
 
             <div class="col-md-6 col-lg-4">
-                <div class="colecao-card">
-                    <div class="icone">💆</div>
-                    <h4>Velas de Massagem</h4>
-                    <p>Uma experiência única de hidratação, relaxamento e autocuidado.</p>
-                </div>
+
+                <a
+                    href="{{ url_for('site.catalogo', categoria='Velas de Massagem') }}"
+                    class="text-decoration-none text-dark">
+
+                    <div class="colecao-card">
+
+                        <div class="icone">
+                            💆
+                        </div>
+
+                        <h4>
+                            Velas de Massagem
+                        </h4>
+
+                        <p>
+                            Uma experiência única de hidratação,
+                            relaxamento e autocuidado.
+                        </p>
+
+                    </div>
+
+                </a>
+
             </div>
+
 
             <div class="col-md-6 col-lg-4">
-                <div class="colecao-card">
-                    <div class="icone">🌸</div>
-                    <h4>Body Splash</h4>
-                    <p>Fragrâncias leves para perfumar o seu dia com delicadeza.</p>
-                </div>
+
+                <a
+                    href="{{ url_for('site.catalogo', categoria='Body Splash') }}"
+                    class="text-decoration-none text-dark">
+
+                    <div class="colecao-card">
+
+                        <div class="icone">
+                            🌸
+                        </div>
+
+                        <h4>
+                            Body Splash
+                        </h4>
+
+                        <p>
+                            Fragrâncias leves para perfumar o seu dia
+                            com delicadeza.
+                        </p>
+
+                    </div>
+
+                </a>
+
             </div>
 
-            <div class="col-md-6 col-lg-6">
-                <div class="colecao-card">
-                    <div class="icone">🧼</div>
-                    <h4>Sabonetes Artesanais</h4>
-                    <p>Sabonetes desenvolvidos para proporcionar cuidado, beleza e bem-estar.</p>
-                </div>
-            </div>
 
             <div class="col-md-6 col-lg-6">
-                <div class="colecao-card">
-                    <div class="icone">🎁</div>
-                    <h4>Kits & Personalizados</h4>
-                    <p>Presentes, lembranças e produtos exclusivos para ocasiões especiais.</p>
-                </div>
+
+                <a
+                    href="{{ url_for('site.catalogo', categoria='Sabonetes Artesanais') }}"
+                    class="text-decoration-none text-dark">
+
+                    <div class="colecao-card">
+
+                        <div class="icone">
+                            🧼
+                        </div>
+
+                        <h4>
+                            Sabonetes Artesanais
+                        </h4>
+
+                        <p>
+                            Sabonetes desenvolvidos para proporcionar
+                            cuidado, beleza e bem-estar.
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-6">
+
+                <a
+                    href="{{ url_for('site.catalogo', categoria='Kits & Personalizados') }}"
+                    class="text-decoration-none text-dark">
+
+                    <div class="colecao-card">
+
+                        <div class="icone">
+                            🎁
+                        </div>
+
+                        <h4>
+                            Kits & Personalizados
+                        </h4>
+
+                        <p>
+                            Presentes, lembranças e produtos exclusivos
+                            para ocasiões especiais.
+                        </p>
+
+                    </div>
+
+                </a>
+
             </div>
 
         </div>
@@ -150,32 +270,56 @@
     </div>
 
 </section>
+
+
 <section class="frases">
 
     <div class="container text-center">
 
-        <span class="titulo-secao">Palavras que Inspiram</span>
+        <span class="titulo-secao">
+            Palavras que Inspiram
+        </span>
 
-        <h2>Pequenos detalhes que aquecem o coração.</h2>
+        <h2>
+            Pequenos detalhes que aquecem o coração.
+        </h2>
 
         <div class="row justify-content-center mt-5">
 
             <div class="col-lg-4 mb-4">
+
                 <div class="frase-card">
-                    <p>"Que seja sempre como Deus quiser."</p>
+
+                    <p>
+                        "Que seja sempre como Deus quiser."
+                    </p>
+
                 </div>
+
             </div>
 
             <div class="col-lg-4 mb-4">
+
                 <div class="frase-card">
-                    <p>"Tua graça me basta."</p>
+
+                    <p>
+                        "Tua graça me basta."
+                    </p>
+
                 </div>
+
             </div>
 
             <div class="col-lg-4 mb-4">
+
                 <div class="frase-card">
-                    <p>"Que tudo que Deus faz durará eternamente."</p>
+
+                    <p>
+                        "Que tudo que Deus faz durará eternamente."
+                    </p>
+
                 </div>
+
             </div>
 
         </div>
@@ -183,76 +327,164 @@
     </div>
 
 </section>
+
+
 <section class="destaques">
 
     <div class="container">
 
         <div class="text-center mb-5">
 
-            <span class="titulo-secao">Produtos em Destaque</span>
+            <span class="titulo-secao">
+                Produtos em Destaque
+            </span>
 
-            <h2>Escolhidos para encantar.</h2>
+            <h2>
+                Escolhidos para encantar.
+            </h2>
 
         </div>
 
         <div class="row g-4">
 
-            <div class="col-md-6 col-lg-3">
-                <div class="produto-card">
-                    <h5>🕯️ Vela Aromática</h5>
-                    <p>Minimalista 50g</p>
-                    <strong>R$ 32,90</strong>
-                </div>
-            </div>
+            {% if produtos %}
 
-            <div class="col-md-6 col-lg-3">
-                <div class="produto-card">
-                    <h5>💆 Vela de Massagem</h5>
-                    <p>100% Natural</p>
-                    <strong>R$ 20,00</strong>
-                </div>
-            </div>
+                {% for produto in produtos %}
 
-            <div class="col-md-6 col-lg-3">
-                <div class="produto-card">
-                    <h5>🌸 Body Splash</h5>
-                    <p>200ml</p>
-                    <strong>R$ 39,90</strong>
-                </div>
-            </div>
+                <div class="col-md-6 col-lg-3">
 
-            <div class="col-md-6 col-lg-3">
-                <div class="produto-card">
-                    <h5>🎁 Kit Presente</h5>
-                    <p>Personalizado</p>
-                    <strong>A partir de R$ 235,00</strong>
+                    <div class="card h-100 shadow-sm border-0">
+
+                        <a
+                            href="{{ url_for('site.produto', id=produto.id) }}">
+
+                            <img
+                                src="{{ url_for('static', filename='img/products/' ~ produto.imagem) }}"
+                                class="card-img-top"
+                                alt="{{ produto.nome }}"
+                                style="height:250px; object-fit:cover;">
+
+                        </a>
+
+                        <div class="card-body d-flex flex-column">
+
+                            <small class="text-muted">
+                                {{ produto.categoria }}
+                            </small>
+
+                            <h5 class="mt-2">
+
+                                <a
+                                    href="{{ url_for('site.produto', id=produto.id) }}"
+                                    class="text-decoration-none text-dark">
+
+                                    {{ produto.nome }}
+
+                                </a>
+
+                            </h5>
+
+                            <p class="text-muted flex-grow-1">
+                                {{ produto.descricao }}
+                            </p>
+
+                            <h4>
+
+                                R$
+                                {{ "%.2f"|format(produto.preco)|replace(".", ",") }}
+
+                            </h4>
+
+                            <div class="d-grid gap-2 mt-3">
+
+                                <a
+                                    href="{{ url_for('site.produto', id=produto.id) }}"
+                                    class="btn btn-outline-primary">
+
+                                    Ver detalhes
+
+                                </a>
+
+                                <a
+                                    href="https://wa.me/55SEUNUMERO?text=Olá! Tenho interesse no produto {{ produto.nome }}."
+                                    target="_blank"
+                                    class="btn btn-primary">
+
+                                    Comprar pelo WhatsApp
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-            </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="col-12 text-center">
+
+                    <p class="text-muted">
+                        Nenhum produto em destaque no momento.
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+        <div class="text-center mt-5">
+
+            <a
+                href="{{ url_for('site.catalogo') }}"
+                class="btn btn-outline-primary btn-lg">
+
+                Ver Catálogo Completo
+
+            </a>
 
         </div>
 
     </div>
 
 </section>
+
+
 <section class="instagram">
 
     <div class="container text-center">
 
-        <span class="titulo-secao">Instagram</span>
+        <span class="titulo-secao">
+            Instagram
+        </span>
 
-        <h2>Acompanhe nossas novidades.</h2>
+        <h2>
+            Acompanhe nossas novidades.
+        </h2>
 
         <p>
-            Inspire-se com nossos produtos, lançamentos e bastidores da produção artesanal.
+            Inspire-se com nossos produtos, lançamentos e bastidores
+            da produção artesanal.
         </p>
 
-        <a href="#" class="btn btn-primary">
+        <a
+            href="https://instagram.com/aromas_encantos"
+            target="_blank"
+            class="btn btn-primary">
+
             @AROMAS_ENCANTOS
+
         </a>
 
     </div>
 
 </section>
+
 
 <footer class="footer">
 
@@ -274,4 +506,5 @@
     </div>
 
 </footer>
+
 {% endblock %}

@@ -1,0 +1,192 @@
+{% extends "admin/layouts/_base.html" %}
+
+{% block title %}
+    Painel Administrativo
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- ===================================================== -->
+    <!-- CABEÇALHO -->
+    <!-- ===================================================== -->
+
+    <div
+        class="d-flex justify-content-between align-items-center mb-5"
+    >
+
+        <div>
+
+            <h2 class="mb-1">
+                Painel Administrativo
+            </h2>
+
+            <p class="text-muted mb-0">
+                Visão geral da sua loja.
+            </p>
+
+        </div>
+
+
+        <a
+            href="{{ url_for('admin.novo_produto') }}"
+            class="btn btn-primary"
+        >
+            + Novo Produto
+        </a>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- INDICADORES -->
+    <!-- ===================================================== -->
+
+    <div class="row g-4">
+
+
+        <!-- Produtos -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="produto-card">
+
+                <h5>
+                    Produtos
+                </h5>
+
+                <h2>
+                    {{ total_produtos }}
+                </h2>
+
+                <small class="text-muted">
+                    Total cadastrado
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Produtos ativos -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="produto-card">
+
+                <h5>
+                    Produtos Ativos
+                </h5>
+
+                <h2>
+                    {{ produtos_ativos }}
+                </h2>
+
+                <small class="text-muted">
+                    Visíveis no catálogo
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Sem estoque -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="produto-card">
+
+                <h5>
+                    Sem Estoque
+                </h5>
+
+                <h2>
+                    {{ produtos_sem_estoque }}
+                </h2>
+
+                <small class="text-muted">
+                    Precisam de atenção
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Categorias -->
+        <div class="col-md-6 col-lg-3">
+
+            <div class="produto-card">
+
+                <h5>
+                    Categorias
+                </h5>
+
+                <h2>
+                    {{ categorias }}
+                </h2>
+
+                <small class="text-muted">
+                    Categorias cadastradas
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- ACESSO RÁPIDO -->
+    <!-- ===================================================== -->
+
+    <div class="mt-5">
+
+        <h4 class="mb-4">
+            Acesso rápido
+        </h4>
+
+
+        <div class="d-flex gap-3 flex-wrap">
+
+
+            <a
+                href="{{ url_for('admin.produtos') }}"
+                class="btn btn-outline-primary"
+            >
+                Gerenciar Produtos
+            </a>
+
+
+            <a
+                href="{{ url_for('admin.novo_produto') }}"
+                class="btn btn-primary"
+            >
+                + Cadastrar Produto
+            </a>
+
+
+            <a
+                href="{{ url_for('admin.categorias') }}"
+                class="btn btn-outline-primary"
+            >
+                Gerenciar Categorias
+            </a>
+
+
+            <a
+                href="{{ url_for('site.home') }}"
+                target="_blank"
+                class="btn btn-outline-secondary"
+            >
+                Ver Catálogo
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

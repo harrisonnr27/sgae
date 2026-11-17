@@ -1,0 +1,18 @@
+# Ambiente Virtual
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask
+instance/
+*.db
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db

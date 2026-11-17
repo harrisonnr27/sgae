@@ -1,0 +1,173 @@
+{% extends "admin/layouts/_base.html" %}
+
+{% block title %}Categorias{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2>Categorias</h2>
+
+            <p class="text-muted mb-0">
+                Gerencie as categorias dos produtos.
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for('admin.nova_categoria') }}"
+            class="btn btn-primary">
+
+            + Nova Categoria
+
+        </a>
+
+    </div>
+
+
+    {% if categorias %}
+
+        <div class="row g-4">
+
+            {% for categoria in categorias %}
+
+                <div class="col-12 col-lg-6">
+
+                    <div class="card shadow-sm border-0 h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+
+                                <div>
+
+                                    <h5 class="mb-1">
+                                        {{ categoria.nome }}
+                                    </h5>
+
+                                    {% if categoria.ativo %}
+
+                                        <span class="badge bg-success">
+                                            Ativa
+                                        </span>
+
+                                    {% else %}
+
+                                        <span class="badge bg-secondary">
+                                            Inativa
+                                        </span>
+
+                                    {% endif %}
+
+                                </div>
+
+                            </div>
+
+
+                            <p class="text-muted mb-4">
+
+                                {% if categoria.descricao %}
+
+                                    {{ categoria.descricao }}
+
+                                {% else %}
+
+                                    <em>
+                                        Sem descrição.
+                                    </em>
+
+                                {% endif %}
+
+                            </p>
+
+
+                            <div class="d-flex flex-wrap gap-2">
+
+                                <a
+                                    href="{{ url_for('admin.editar_categoria', id=categoria.id) }}"
+                                    class="btn btn-warning btn-sm">
+
+                                    Editar
+
+                                </a>
+
+
+                                {% if categoria.ativo %}
+
+                                    <a
+                                        href="{{ url_for('admin.desativar_categoria', id=categoria.id) }}"
+                                        class="btn btn-secondary btn-sm">
+
+                                        Desativar
+
+                                    </a>
+
+                                {% else %}
+
+                                    <a
+                                        href="{{ url_for('admin.ativar_categoria', id=categoria.id) }}"
+                                        class="btn btn-success btn-sm">
+
+                                        Ativar
+
+                                    </a>
+
+                                {% endif %}
+
+
+                                <a
+                                    href="{{ url_for('admin.excluir_categoria', id=categoria.id) }}"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Deseja realmente excluir esta categoria?')">
+
+                                    Excluir
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body text-center py-5">
+
+                <h5>
+                    Nenhuma categoria cadastrada.
+                </h5>
+
+                <p class="text-muted">
+                    Comece adicionando sua primeira categoria.
+                </p>
+
+                <a
+                    href="{{ url_for('admin.nova_categoria') }}"
+                    class="btn btn-primary">
+
+                    + Nova Categoria
+
+                </a>
+
+            </div>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
